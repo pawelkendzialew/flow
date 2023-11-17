@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Student"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-17 12:58:14 PM"/>
+        <attribute name="created" value="U3R1ZGVudDtTMzUyQS1LMTI7MjAyMy0xMS0xNzsxMjozODo0NCBQTTsyNTQ3"/>
+        <attribute name="edited" value="U3R1ZGVudDtTMzUyQS1LMTI7MjAyMy0xMS0xNzsxMjo1ODoxNCBQTTs2OzI2NTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="tablica" type="Integer" array="True" size="10"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="licznik2" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <for variable="i" start="0" end="Size(tablica)-1" direction="inc" step="1">
+                <assign variable="tablica[i]" expression="Random(76)"/>
+                <output expression="tablica[i]" newline="True"/>
+            </for>
+            <declare name="kopia" type="Integer" array="False" size=""/>
+            <declare name="rodzaj" type="Integer" array="False" size=""/>
+            <output expression="&quot;Podaj rodzaj sortowania&quot;" newline="True"/>
+            <input variable="rodzaj"/>
+            <assign variable="kopia" expression="0"/>
+            <assign variable="licznik2" expression="0"/>
+            <for variable="i" start="0" end="Size(tablica)" direction="inc" step="1">
+                <for variable="licznik2" start="0" end="Size(tablica)-1-i-1" direction="inc" step="1">
+                    <if expression="rodzaj != 1">
+                        <then>
+                            <if expression="tablica[licznik2]&lt;tablica[licznik2+1]">
+                                <then>
+                                    <assign variable="kopia" expression="tablica[licznik2]"/>
+                                    <assign variable="tablica[licznik2]" expression="tablica[licznik2+1]"/>
+                                    <assign variable="tablica[licznik2+1]" expression="kopia"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="tablica[licznik2]&gt;tablica[licznik2+1]">
+                                <then>
+                                    <assign variable="kopia" expression="tablica[licznik2]"/>
+                                    <assign variable="tablica[licznik2]" expression="tablica[licznik2+1]"/>
+                                    <assign variable="tablica[licznik2+1]" expression="kopia"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </for>
+            </for>
+            <assign variable="i" expression="0"/>
+            <for variable="i" start="0" end="Size(tablica)-1" direction="inc" step="1">
+                <output expression="&quot;Posortowana tablica:&quot;&amp;tablica[i]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
