@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Student"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-17 12:38:33 PM"/>
+        <attribute name="created" value="U3R1ZGVudDtTMzUyQS1LMTI7MjAyMy0xMS0xNzsxMjozMDowNCBQTTsyNTM1"/>
+        <attribute name="edited" value="U3R1ZGVudDtTMzUyQS1LMTI7MjAyMy0xMS0xNzsxMjozODozMyBQTTsxOzI2NTM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="pierwsza" type="Integer" array="False" size=""/>
+            <assign variable="pierwsza" expression="100"/>
+            <declare name="ostatnia" type="Integer" array="False" size=""/>
+            <assign variable="ostatnia" expression="998"/>
+            <declare name="suma" type="Integer" array="False" size=""/>
+            <assign variable="suma" expression="0"/>
+            <for variable="pierwsza" start="99" end="998" direction="inc" step="1">
+                <if expression="pierwsza%2==0">
+                    <then>
+                        <assign variable="suma" expression="suma + pierwsza"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <output expression="&quot;Suma wszystkich trzycyfrowych parzystych to:&quot;&amp;suma" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
